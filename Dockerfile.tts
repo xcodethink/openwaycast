@@ -1,0 +1,38 @@
+# Dockerfile.tts —— 本地 TTS 模型打包(Phase 3.4,WIP:尚未构建/验证)
+# 目标:免用户折腾 conda/venv —— 一个镜像里备齐 ffmpeg + node + python + Kokoro + CosyVoice2。
+# 现状:草稿。模型下载步骤(CosyVoice2-0.5B ~GB)未固化,镜像未在干净环境构建过。
+# 暂用方案:本机装 venv/conda(见 docs/tts.md),或改用云 provider(WAYCAST_TTS_PROVIDER=openai 等,零本地依赖)。
+
+FROM python:3.11-slim
+
+# 系统依赖:ffmpeg(音视频)+ node(引擎/渲染)+ git/curl(取模型)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ffmpeg git curl ca-certificates build-essential \
+ && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+ && apt-get install -y nodejs \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# --- 英文 TTS:Kokoro(Apache-2.0)---
+# venv + hyperframes 的 tts(am_michael)。TODO: 固定 kokoro 权重版本。
+RUN python -m venv /opt/kokoro-venv
+# RUN /opt/kokoro-venv/bin/pip install <kokoro deps>   # TODO 锁版本
+
+# --- 中文 TTS:CosyVoice2-0.5B(Apache-2.0,同嗓克隆)---
+# TODO: clone CosyVoice + pip install -r requirements(去掉 whisper/cu121)+ 下载 CosyVoice2-0.5B 权重
+# RUN git clone https://github.com/FunAudioLLM/CosyVoice /opt/CosyVoice
+# RUN <下载 pretrained_models/CosyVoice2-0.5B>   # ~GB,需固化来源+校验
+
+# 引擎代码(渲染 + 内容管线)
+COPY engine /app/engine
+
+ENV KOKORO_VENV=/opt/kokoro-venv \
+    COSYVOICE_PY=/opt/cosyvoice-venv/bin/python \
+    COSYVOICE_REPO=/opt/CosyVoice \
+    FFMPEG=/usr/bin/ffmpeg FFPROBE=/usr/bin/ffprobe
+
+# 用法(构建可用后):
+#   docker build -f Dockerfile.tts -t waycast-tts .
+#   docker run --rm -e BRAND=acme -e VO_LANG=en -v $PWD/engine/brands:/app/engine/brands waycast-tts node engine/build.mjs
+CMD ["node", "-e", "console.log('waycast-tts 镜像草稿 — 模型安装步骤待固化,见 docs/tts.md')"]

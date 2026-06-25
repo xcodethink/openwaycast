@@ -1,0 +1,36 @@
+# 依赖
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# 大模型(由 setup/Docker 下载,不入库)
+models/
+*.pt
+*.onnx
+*.safetensors
+pretrained_models/
+
+# 构建产物 / 成片
+build/
+output/
+*.mp4
+dist/
+
+# 密钥 / 本地配置(防泄露)
+.env
+.env.local
+*.key
+secrets*
+
+# 系统
+.DS_Store
+*.log
+/tmp/
+
+# 保留:示例 .env.example / 少量 CC0 示例资产(显式 add)
+!.env.example
+
+# 音乐:BYO CC0(默认不捆;放 bgm.mp3 想捆请显式 git add -f)
+engine/template/assets/audio/*.mp3

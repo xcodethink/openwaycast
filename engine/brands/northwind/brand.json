@@ -1,0 +1,15 @@
+{
+  "name": "NORTHWIND",
+  "slug": "northwind",
+  "prefix": "NORTHWIND",
+  "city": "Ho Chi Minh City",
+  "accent": "#9dff71",
+  "accent2": "#9dff71",
+  "mark": "▪",
+  "bgRGB": [
+    5,
+    7,
+    10
+  ],
+  "bgOpacity": 0.42
+}

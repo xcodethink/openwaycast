@@ -1,0 +1,45 @@
+{
+  "note": "每镜背景图 + 署名(CC-BY 需署名)。换图=替这里的文件并改 credit",
+  "images": [
+    {
+      "shot": 1,
+      "file": "01.jpg",
+      "credit": "Ho Chi Minh City Skyline at Night — Tran Van Ngoc — CC0"
+    },
+    {
+      "shot": 2,
+      "file": "02.jpg",
+      "credit": "Ho Chi Minh City Skyline — Pimnl — CC0"
+    },
+    {
+      "shot": 3,
+      "file": "03.jpg",
+      "credit": "Ho Chi Minh City (aerial) — dronepicr — CC BY 2.0"
+    },
+    {
+      "shot": 4,
+      "file": "04.jpg",
+      "credit": "Ho Chi Minh City — DJI — Lê Minh Phát — CC BY 2.0"
+    },
+    {
+      "shot": 5,
+      "file": "05.jpg",
+      "credit": "Ho Chi Minh City, Saigon — flowcomm — CC BY 2.0"
+    },
+    {
+      "shot": 6,
+      "file": "06.jpg",
+      "credit": "Ho Chi Minh City skyline — Tri Nguyen — CC BY 2.0"
+    },
+    {
+      "shot": 7,
+      "file": "07.jpg",
+      "credit": "Landmark 81 — Christine und Hagen Graf — CC BY 2.0"
+    },
+    {
+      "shot": 8,
+      "file": "08.jpg",
+      "credit": "Ho Chi Minh City skyline — Simon_sees — CC BY 2.0"
+    }
+  ]
+}

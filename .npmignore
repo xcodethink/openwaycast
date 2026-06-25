@@ -1,0 +1,17 @@
+# npm 包排除(注:package.json 有 files 白名单时 npm 不读 .gitignore,只读本文件)
+# 渲染产物(运行时再生,绝不入包)
+build/
+engine/brands/*/build/
+engine/build.log
+*.log
+# 成片 / 临时
+output/
+**/output/
+*.mp4
+# 测试草稿目录
+engine/test/_smoke-bg/
+engine/test/_smoke-bg2/
+engine/test/_smoke-tts/
+# 私密
+.env
+.env.local

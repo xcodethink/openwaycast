@@ -1,0 +1,57 @@
+{
+  "_note": "WJ DIGITAL storyboard:8 镜,每镜选一个区块 + 填内容。ID/SEQ/ACCENT/ACCENT2/BG/BRAND_* 由 build 注入。dur 为占位(正式 build 按配音重定时)。",
+  "shots": [
+    { "block": "cover", "dur": 6.6, "content": {
+      "META_L": "WJ DIGITAL", "META_R": "KUALA LUMPUR", "WORD": "WJ DIGITAL", "SUB": "AI · KUALA LUMPUR",
+      "KICKER": "OUR THESIS", "HERO": "NOT BETTER<br>SOFTWARE.", "TAG": "AI that makes software feel <em>unnecessary</em>." } },
+    { "block": "editorial-facts", "dur": 5.3, "content": {
+      "META_L": "WHO WE ARE", "META_R": "EST. 2026 · KUALA LUMPUR", "KICKER": "THE COMPANY",
+      "HEAD": "We turn <em>what you want</em><br>into finished work.",
+      "BODY": "Instead of learning another tool, you just tell AI what you need — and it delivers the result.",
+      "FACTS": [
+        { "fn": "03", "fl": "Layers we build<br><i>Apps · Models · One System</i>" },
+        { "fn": "06", "fl": "Areas we focus<br><i>Where AI removes friction</i>" } ] } },
+    { "block": "layer-stack", "dur": 5.2, "content": {
+      "META_L": "WHAT WE BUILD", "META_R": "ONE DIRECTION", "LABEL": "THREE LAYERS, ONE DIRECTION",
+      "LAYERS": [
+        { "cls": "hi", "lnum": "01", "lname": "APPS YOU USE", "ldesc": "Professional AI, simple for anyone", "ltag": "WHAT YOU TOUCH" },
+        { "cls": "", "lnum": "02", "lname": "EXPERT MODELS", "ldesc": "AI trained deeply for each field", "ltag": "THE DEPTH" },
+        { "cls": "", "lnum": "03", "lname": "ONE SYSTEM", "ldesc": "Ties the right tools together", "ltag": "THE ENGINE" } ],
+      "FLOW": "One direction — from what you want, to <em>what's done</em>." } },
+    { "block": "statement-list", "dur": 5.5, "content": {
+      "META_L": "WHY IT MATTERS", "META_R": "RESULTS, NOT SOFTWARE", "KICKER": "WHY IT MATTERS",
+      "HEAD": "People don't want<br>software.<br><em>They want a result.</em>",
+      "LIST": [
+        { "lk": "A report,", "lv": "written." },
+        { "lk": "A lesson,", "lv": "prepared." },
+        { "lk": "A decision,", "lv": "made." } ],
+      "FOOT": "A capable AI system can take the goal — and produce the finished work." } },
+    { "block": "flow", "dur": 5.4, "content": {
+      "META_L": "HOW IT WORKS", "META_R": "YOU ASK → IT'S DONE", "LABEL": "From a request to a finished result",
+      "STEPS": [
+        { "cls": "", "snum": "01", "sname": "You ask", "sdesc": "Describe what you want" },
+        { "cls": "", "snum": "02", "sname": "AI understands", "sdesc": "The goal and the details" },
+        { "cls": "", "snum": "03", "sname": "AI works", "sdesc": "Right models and tools, together" },
+        { "cls": "done", "snum": "04", "sname": "It's done", "sdesc": "Finished result, ready to use" } ] } },
+    { "block": "grid", "dur": 6.0, "content": {
+      "META_L": "WHERE WE FOCUS", "META_R": "SIX AREAS", "LABEL": "Six areas, less everyday friction",
+      "TILES": [
+        { "tn": "01", "th": "Healthcare", "td": "Records, decision support, patient Q&amp;A" },
+        { "tn": "02", "th": "Finance", "td": "Research, risk, and compliance made clear" },
+        { "tn": "03", "th": "Education", "td": "Personalized paths, knowledge-gap diagnosis" },
+        { "tn": "04", "th": "Social", "td": "Cross-language, context-aware connection" },
+        { "tn": "05", "th": "Community", "td": "Content and group insight for small teams" },
+        { "tn": "06", "th": "Lifestyle", "td": "Shopping, food, travel, daily planning" } ] } },
+    { "block": "manifesto", "dur": 6.0, "content": {
+      "META_L": "WHAT WE BELIEVE", "META_R": "THREE BELIEFS", "LABEL": "What guides our work",
+      "ITEMS": [
+        { "bh": "AI should be <em>invisible</em>.", "bd": "The best technology disappears into the result." },
+        { "bh": "Ordinary people <em>first</em>.", "bd": "If AI only serves experts, it just builds new walls." },
+        { "bh": "Depth over <em>breadth</em>.", "bd": "In real fields, a confident generic answer isn't enough." } ] } },
+    { "block": "cta", "dur": 5.0, "content": {
+      "META_L": "TELL US WHAT YOU NEED", "META_R": "wjdigital.ai", "WORD": "WJ DIGITAL",
+      "Q": "Tell us what you<br>want <em>done</em>.", "CSUB": "Investor, partner, customer, or simply curious.",
+      "BTN": "service@wjdigital.ai",
+      "DISC": "Menara Bank Pembangunan, Plaza Conlay, Kuala Lumpur · AI that makes software feel unnecessary · © 2026 wjdigital.ai" } }
+  ]
+}

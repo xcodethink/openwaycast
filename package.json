@@ -1,0 +1,33 @@
+{
+  "name": "waycastai",
+  "version": "0.1.0",
+  "description": "贴一个公司官网 URL → 自动生成竖屏品牌介绍片(文案+真人配音+真实城市背景+成片)。开源、自托管、本地优先,云可选(BYO-key)。",
+  "type": "module",
+  "bin": {
+    "waycast": "bin/waycast.mjs",
+    "waycastai": "bin/waycast.mjs"
+  },
+  "files": [
+    "bin/",
+    "engine/",
+    "docs/",
+    "setup.sh",
+    ".env.example",
+    "CLAUDE.md",
+    "AGENTS.md",
+    "NOTICE",
+    "LICENSE",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "scripts": {
+    "doctor": "node engine/doctor.mjs",
+    "smoke": "node engine/test/smoke.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "license": "(MIT OR Apache-2.0)",
+  "keywords": ["video", "brand", "marketing", "tts", "automation", "self-hosted", "open-source", "vertical-video", "ffmpeg"],
+  "repository": { "type": "git", "url": "git+https://github.com/xcodethink/openwaycast.git" },
+  "homepage": "https://github.com/xcodethink/openwaycast#readme",
+  "bugs": { "url": "https://github.com/xcodethink/openwaycast/issues" }
+}

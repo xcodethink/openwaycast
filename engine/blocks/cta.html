@@ -1,0 +1,77 @@
+<template id="{{ID}}-template">
+  <div data-composition-id="{{ID}}" data-width="1080" data-height="1920" data-start="0" data-duration="5.0">
+
+    <div class="bg"></div>
+    <div class="frame"></div>
+
+    <div class="pad">
+      <div class="meta"><span>{{META_L}}</span><span>{{META_R}}</span></div>
+
+      <div class="center">
+        <div class="lock">
+          <div class="word">{{WORD}}</div>
+        </div>
+
+        <div class="q">{{Q}}</div>
+        <div class="csub">{{CSUB}}</div>
+        <div class="btn">{{BTN}}</div>
+      </div>
+    </div>
+
+    <div class="disc">{{DISC}}</div>
+    <div class="brand"><span>{{BRAND_MARK}}</span> {{BRAND_NAME}}</div>
+    <div class="seq">{{SEQ}}</div>
+
+    <style>
+      @font-face{font-family:'Noto Sans SC';font-weight:500;src:url('fonts/NotoSansSC-Medium.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:600;src:url('fonts/NotoSansSC-SemiBold.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:700;src:url('fonts/NotoSansSC-Bold.ttf') format('truetype');font-display:block}
+      [data-composition-id="{{ID}}"]{--accent:{{ACCENT}};position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;background:{{BG}};color:#f4f6f8;font-family:'Noto Sans SC',sans-serif}
+      [data-composition-id="{{ID}}"] .bg{position:absolute;inset:0;background:
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(0deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        radial-gradient(120% 80% at 50% 38%,color-mix(in srgb,var(--accent) 9%,{{BG}}) 0%,{{BG}} 62%);background-size:120px 120px,120px 120px,100% 100%}
+      [data-composition-id="{{ID}}"] .frame{position:absolute;inset:34px;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);pointer-events:none}
+      [data-composition-id="{{ID}}"] .pad{position:absolute;inset:0;padding:84px 78px 170px;display:flex;flex-direction:column}
+      [data-composition-id="{{ID}}"] .meta{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:29px;letter-spacing:.14em;color:#59626d;border-bottom:1px solid #242b33;padding-bottom:30px}
+      [data-composition-id="{{ID}}"] .center{margin:auto 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+      [data-composition-id="{{ID}}"] .lock{display:flex;flex-direction:column;align-items:center}
+      [data-composition-id="{{ID}}"] .word{font-family:'Oswald',sans-serif;font-weight:700;font-size:68px;letter-spacing:.16em;color:#9aa3ad;text-transform:uppercase;opacity:0}
+      [data-composition-id="{{ID}}"] .q{font-family:'Oswald','Noto Sans SC',sans-serif;font-weight:700;font-size:104px;line-height:1.1;text-transform:uppercase;margin-top:48px;opacity:0}
+      [data-composition-id="{{ID}}"] .q em{font-style:normal;color:var(--accent)}
+      [data-composition-id="{{ID}}"] .csub{font-family:'Noto Sans SC';font-weight:500;font-size:38px;color:#9aa3ad;margin-top:40px;line-height:1.5;opacity:0}
+      [data-composition-id="{{ID}}"] .btn{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:42px;letter-spacing:.02em;color:#0b0d10;background:var(--accent);padding:36px 52px;border-radius:8px;margin-top:56px;opacity:0}
+      [data-composition-id="{{ID}}"] .disc{position:absolute;bottom:150px;left:78px;right:78px;font-family:'JetBrains Mono',monospace;font-size:21px;color:#59626d;letter-spacing:.02em;line-height:1.6;text-align:center;opacity:0}
+      [data-composition-id="{{ID}}"] .brand{position:absolute;bottom:64px;left:78px;font-family:'Oswald',sans-serif;font-weight:600;font-size:36px;color:#9aa3ad;letter-spacing:.08em}
+      [data-composition-id="{{ID}}"] .brand span{color:var(--accent)}
+      [data-composition-id="{{ID}}"] .seq{position:absolute;bottom:64px;right:78px;font-family:'JetBrains Mono',monospace;font-size:33px;color:#59626d;letter-spacing:.1em}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function(){
+        var ID="{{ID}}";
+        var root=document.querySelector('[data-composition-id="'+ID+'"]');
+        var $=function(s){return root.querySelector(s)};
+        var bg=$('.bg'),center=$('.center');
+        var word=$('.word'),q=$('.q'),csub=$('.csub'),btn=$('.btn'),disc=$('.disc'),brand=$('.brand'),seq=$('.seq');
+        gsap.set([brand,seq],{opacity:0});
+        window.__timelines=window.__timelines||{};
+        var D=parseFloat(root.getAttribute('data-duration'))||5.0;
+        var tl=gsap.timeline({paused:true});
+        tl.to(bg,{scale:1.07,duration:D,ease:"none",transformOrigin:"50% 40%"},0)
+          .to(center,{scale:1.025,y:-10,duration:D,ease:"sine.inOut",transformOrigin:"50% 42%"},0);
+        tl.to([brand,seq],{opacity:1,duration:.4},0.1)
+          .to(word,{opacity:1,y:0,duration:.7,ease:"power3.out"},0.5).from(word,{y:24,filter:"blur(8px)"},0.5)
+          .to(q,{opacity:1,y:0,duration:.6,ease:"power3.out"},1.7).from(q,{y:36},1.7)
+          .to(csub,{opacity:1,duration:.5,ease:"power2.out"},Math.min(3.2,D*0.42))
+          .to(btn,{opacity:1,scale:1,duration:.6,ease:"back.out(1.7)"},Math.min(4.2,D*0.56)).from(btn,{scale:.7,transformOrigin:"50% 50%"},Math.min(4.2,D*0.56))
+          .to(disc,{opacity:1,duration:.5,ease:"power2.out"},Math.min(5.0,D*0.68));
+        var bt=Math.min(D-1.0,D*0.6+0.6), bd=Math.max(0.9,(D-bt)/2);
+        tl.to(btn,{scale:1.05,duration:bd,ease:"sine.inOut",yoyo:true,repeat:1,transformOrigin:"50% 50%"},bt);
+        tl.set({},{},5.0);
+        window.__timelines[ID]=tl;
+      })();
+    </script>
+  </div>
+</template>

@@ -1,0 +1,45 @@
+{
+  "note": "每镜背景图 + 署名(CC-BY 需署名)。换图=替这里的文件并改 credit",
+  "images": [
+    {
+      "shot": 1,
+      "file": "01.jpg",
+      "credit": "Petronas Towers at night — Jakub Hałun — CC BY 4.0"
+    },
+    {
+      "shot": 2,
+      "file": "02.jpg",
+      "credit": "KL skyline w/ Mont Kiara & Petronas — Marek Ślusarczyk (Tupungato) — CC BY 3.0"
+    },
+    {
+      "shot": 3,
+      "file": "03.jpg",
+      "credit": "KL night skyline w/ Mont Kiara — Marek Ślusarczyk (Tupungato) — CC BY 3.0"
+    },
+    {
+      "shot": 4,
+      "file": "04.jpg",
+      "credit": "Kuala Lumpur skyline — Thomas Quine — CC BY 2.0"
+    },
+    {
+      "shot": 5,
+      "file": "05.jpg",
+      "credit": "Kuala Lumpur skyline at night (2019) — Lee Wei — CC BY 2.0"
+    },
+    {
+      "shot": 6,
+      "file": "06.jpg",
+      "credit": "Kuala Lumpur skyline long exposure — CC0"
+    },
+    {
+      "shot": 7,
+      "file": "07.jpg",
+      "credit": "KLCC from KL Tower — Vyacheslav Argenberg — CC BY 4.0"
+    },
+    {
+      "shot": 8,
+      "file": "08.jpg",
+      "credit": "Kuala Lumpur Skyline at dusk — Walkerssk — CC0"
+    }
+  ]
+}

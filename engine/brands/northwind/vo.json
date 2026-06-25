@@ -1,0 +1,26 @@
+{
+  "_说明": "Northwind Digital 品牌介绍片旁白(英文,am_michael 暖声)。通俗版。正好 8 段,与 8 镜一一对应。改这里的文字即可换配音。S E O / A I 拆开写是为了 TTS 念准。",
+  "voice": "am_michael",
+  "lang": "en",
+  "vo": [
+    "This is Northwind — digital marketing and A I consulting that turns your vision into real growth.",
+    "Going global gets messy fast: high acquisition costs, unclear localization, and data scattered everywhere.",
+    "Northwind is your A I-first digital agency — one team for strategy, design, technology, and growth.",
+    "We cover the full stack: web and S E O, custom software, branding, social, media distribution, even business and visa setup — all powered by our own A I.",
+    "Why teams choose us: A I-first, data-driven, global-ready, and honest about what actually works.",
+    "Our process is simple. We discover your goals, build the strategy and ship it, then keep optimizing together.",
+    "The result? Faster go-to-market, multilingual content at lower cost, and brands that look world-class.",
+    "Let's build something great together. Tell us your goals — and we'll craft the right solution."
+  ],
+  "_说明_zh": "中文版旁白(CosyVoice 同嗓克隆念中文)。VO_LANG=zh 时用这组。画面仍为英文。",
+  "vo_zh": [
+    "这里是 Northwind，做数字营销和 AI 咨询，把你的愿景变成实实在在的增长。",
+    "出海，往往很快就乱了套：获客成本高、本地化没头绪、数据散落各处。",
+    "Northwind 是你的 AI 优先数字代理，策略、设计、技术、增长，一个团队全包。",
+    "我们覆盖全栈：建站与 SEO、定制软件、品牌广告、社交媒体、媒体分发，甚至公司注册和签证，全部由我们自研的 AI 驱动。",
+    "为什么大家选我们：AI 优先、数据驱动、面向全球，而且对什么真正有效，诚实不忽悠。",
+    "流程很简单：先摸清你的目标，制定策略并落地交付，再一起持续优化。",
+    "结果是什么？上市更快，多语言内容成本更低，品牌看起来世界级。",
+    "一起做点了不起的事吧。告诉我们你的目标，我们来打造合适的方案。"
+  ]
+}

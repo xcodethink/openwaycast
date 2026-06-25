@@ -1,0 +1,88 @@
+<template id="{{ID}}-template">
+  <div data-composition-id="{{ID}}" data-width="1080" data-height="1920" data-start="0" data-duration="5.2">
+
+    <div class="bg"></div>
+    <div class="frame"></div>
+
+    <div class="pad">
+      <div class="meta"><span>{{META_L}}</span><span>{{META_R}}</span></div>
+
+      <div class="center">
+        <div class="label">{{LABEL}}</div>
+
+        <div class="stack">
+<!--ITEMS:LAYERS--><div class="layer {{cls}}"><div class="lnum">{{lnum}}</div><div class="lbody"><div class="lname">{{lname}}</div><div class="ldesc">{{ldesc}}</div></div><div class="ltag">{{ltag}}</div></div>
+<!--/ITEMS--></div>
+
+        <div class="flow"><span class="arr">▾</span> {{FLOW}}</div>
+      </div>
+    </div>
+
+    <div class="brand"><span>{{BRAND_MARK}}</span> {{BRAND_NAME}}</div>
+    <div class="seq">{{SEQ}}</div>
+
+    <style>
+      @font-face{font-family:'Noto Sans SC';font-weight:500;src:url('fonts/NotoSansSC-Medium.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:600;src:url('fonts/NotoSansSC-SemiBold.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:700;src:url('fonts/NotoSansSC-Bold.ttf') format('truetype');font-display:block}
+      [data-composition-id="{{ID}}"]{--accent:{{ACCENT}};--accent2:{{ACCENT2}};position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;background:{{BG}};color:#f4f6f8;font-family:'Noto Sans SC',sans-serif}
+      [data-composition-id="{{ID}}"] .bg{position:absolute;inset:0;background:
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(0deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(180deg,color-mix(in srgb,#ffffff 3%,{{BG}}) 0%,{{BG}} 100%);background-size:120px 120px,120px 120px,100% 100%}
+      [data-composition-id="{{ID}}"] .frame{position:absolute;inset:34px;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);pointer-events:none}
+      [data-composition-id="{{ID}}"] .pad{position:absolute;inset:0;padding:84px 78px 170px;display:flex;flex-direction:column}
+      [data-composition-id="{{ID}}"] .meta{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:29px;letter-spacing:.14em;color:#59626d;border-bottom:1px solid #242b33;padding-bottom:30px}
+      [data-composition-id="{{ID}}"] .center{margin:auto 0;display:flex;flex-direction:column}
+      [data-composition-id="{{ID}}"] .label{font-family:'Oswald',sans-serif;font-weight:600;font-size:42px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;opacity:0;margin-bottom:54px}
+      [data-composition-id="{{ID}}"] .stack{display:flex;flex-direction:column;gap:14px}
+      [data-composition-id="{{ID}}"] .layer{display:flex;align-items:center;gap:34px;background:#0c0f14;border:1px solid #242b33;border-left:5px solid var(--accent);padding:44px 44px;opacity:0}
+      [data-composition-id="{{ID}}"] .layer.hi{border-left-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 6%,#0c0f14)}
+      [data-composition-id="{{ID}}"] .lnum{font-family:'Oswald',sans-serif;font-weight:700;font-size:74px;line-height:.9;color:#59626d;flex:0 0 auto;min-width:96px}
+      [data-composition-id="{{ID}}"] .layer.hi .lnum{color:var(--accent2)}
+      [data-composition-id="{{ID}}"] .lbody{flex:1}
+      [data-composition-id="{{ID}}"] .lname{font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;letter-spacing:.02em;line-height:1}
+      [data-composition-id="{{ID}}"] .ldesc{font-family:'Noto Sans SC';font-weight:500;font-size:31px;color:#9aa3ad;margin-top:12px}
+      [data-composition-id="{{ID}}"] .ltag{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px;letter-spacing:.08em;color:#59626d;text-align:right;flex:0 0 auto}
+      [data-composition-id="{{ID}}"] .flow{font-family:'Noto Sans SC';font-weight:600;font-size:38px;color:#cfd5dc;margin-top:54px;text-align:center;opacity:0}
+      [data-composition-id="{{ID}}"] .flow .arr{color:var(--accent);font-size:46px;margin-right:10px}
+      [data-composition-id="{{ID}}"] .flow em{font-style:normal;color:var(--accent2)}
+      [data-composition-id="{{ID}}"] .brand{position:absolute;bottom:64px;left:78px;font-family:'Oswald',sans-serif;font-weight:600;font-size:36px;color:#9aa3ad;letter-spacing:.08em}
+      [data-composition-id="{{ID}}"] .brand span{color:var(--accent)}
+      [data-composition-id="{{ID}}"] .seq{position:absolute;bottom:64px;right:78px;font-family:'JetBrains Mono',monospace;font-size:33px;color:#59626d;letter-spacing:.1em}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function(){
+        var ID="{{ID}}";
+        var root=document.querySelector('[data-composition-id="'+ID+'"]');
+        var $=function(s){return root.querySelector(s)},$$=function(s){return root.querySelectorAll(s)};
+        var bg=$('.bg'),center=$('.center');
+        var meta=$('.meta'),label=$('.label'),flow=$('.flow'),brand=$('.brand'),seq=$('.seq');
+        var layers=$$('.layer');
+        gsap.set([meta,brand,seq],{opacity:0});
+        window.__timelines=window.__timelines||{};
+        var D=parseFloat(root.getAttribute('data-duration'))||5.2;
+        var tl=gsap.timeline({paused:true});
+        tl.to(bg,{scale:1.07,duration:D,ease:"none",transformOrigin:"50% 45%"},0)
+          .to(center,{scale:1.02,y:-10,duration:D,ease:"sine.inOut",transformOrigin:"50% 40%"},0);
+        tl.to(meta,{opacity:1,duration:.5},0.1)
+          .to([brand,seq],{opacity:1,duration:.4},0.2)
+          .to(label,{opacity:1,y:0,duration:.5,ease:"power3.out"},0.35).from(label,{y:20},0.35);
+        var span=Math.min(2.4,(D-1.9)/layers.length);
+        layers.forEach(function(l,i){
+          var t=0.9+i*span;
+          tl.to(l,{opacity:1,y:0,duration:.55,ease:"power3.out"},t).from(l,{y:-26},t);
+          tl.fromTo(l,{scale:1},{scale:1.028,duration:.32,ease:"sine.out",transformOrigin:"0% 50%"},t+.45).to(l,{scale:1,duration:.5,ease:"sine.inOut"},t+.77);
+        });
+        var flowT=Math.min(D-1.0,0.9+layers.length*span+0.2);
+        tl.to(flow,{opacity:1,y:0,duration:.6,ease:"power2.out"},flowT).from(flow,{y:16},flowT);
+        var bt=flowT+0.9, bd=Math.max(0.9,(D-bt)/2);
+        tl.to(layers[0],{scale:1.025,duration:bd,ease:"sine.inOut",yoyo:true,repeat:1,transformOrigin:"0% 50%"},bt);
+        tl.set({},{},5.2);
+        window.__timelines[ID]=tl;
+      })();
+    </script>
+  </div>
+</template>

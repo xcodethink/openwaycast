@@ -1,0 +1,15 @@
+{
+  "name": "WJ DIGITAL",
+  "slug": "wjdigital",
+  "prefix": "WJDIGITAL",
+  "city": "Kuala Lumpur",
+  "accent": "#ff8a00",
+  "accent2": "#19c37d",
+  "mark": "◆",
+  "bgRGB": [
+    5,
+    6,
+    8
+  ],
+  "bgOpacity": 0.42
+}

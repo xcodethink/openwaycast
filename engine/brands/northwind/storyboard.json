@@ -1,0 +1,60 @@
+{
+  "_note": "NORTHWIND storyboard:8 镜复用 blocks/ 区块库。05 镜原 bespoke 'reasons' 版式 = manifesto 区块同源(belief/reason 同构),统一到 manifesto。ID/SEQ/ACCENT/ACCENT2/BG/BRAND_* 由 build 注入;dur 为占位(按配音重定时)。",
+  "shots": [
+    { "block": "cover", "dur": 6.6, "content": {
+      "META_L": "NORTHWIND", "META_R": "DIGITAL &amp; AI", "WORD": "NORTHWIND", "SUB": "DIGITAL MARKETING · AI CONSULTING",
+      "KICKER": "YOUR SUCCESS · OUR MISSION", "HERO": "WE GROW<br>YOUR BRAND.", "TAG": "Strategy, design, tech &amp; AI — <em>one team</em>." } },
+    { "block": "statement-list", "dur": 5.5, "content": {
+      "META_L": "THE CHALLENGE", "META_R": "GOING GLOBAL", "KICKER": "THE CHALLENGE",
+      "HEAD": "Going global<br>shouldn't cost you<br><em>everything</em>.",
+      "LIST": [
+        { "lk": "High", "lv": "acquisition costs." },
+        { "lk": "Unclear", "lv": "localization." },
+        { "lk": "Data", "lv": "scattered everywhere." } ],
+      "FOOT": "Most brands burn budget long before they find what actually works." } },
+    { "block": "editorial-facts", "dur": 5.3, "content": {
+      "META_L": "WHO WE ARE", "META_R": "AI-FIRST AGENCY", "KICKER": "THE AGENCY",
+      "HEAD": "One team for strategy,<br>design, tech <em>&amp; growth</em>.",
+      "BODY": "Northwind is an AI-first digital agency. We turn your vision into scalable digital solutions — built for global markets.",
+      "FACTS": [
+        { "fn": "08", "fl": "Services<br><i>End-to-end, one partner</i>" },
+        { "fn": "AI", "fl": "Built in<br><i>Into every service</i>" } ] } },
+    { "block": "grid", "dur": 6.0, "content": {
+      "META_L": "OUR SERVICES", "META_R": "FULL-STACK", "LABEL": "Everything to grow your brand",
+      "TILES": [
+        { "tn": "01", "th": "Web &amp; SEO", "td": "Conversion-focused sites" },
+        { "tn": "02", "th": "Custom Software", "td": "Built for your operations" },
+        { "tn": "03", "th": "Branding &amp; Ads", "td": "Identity to advertising" },
+        { "tn": "04", "th": "Social Media", "td": "Content &amp; campaigns" },
+        { "tn": "05", "th": "Media Distribution", "td": "Multilingual global reach" },
+        { "tn": "06", "th": "Business &amp; Visa", "td": "Setup, legal, market entry" },
+        { "tn": "07", "th": "Productivity Tools", "td": "Smart internal tooling" },
+        { "tn": "08", "th": "Proprietary AI", "td": "Our own AI systems" } ] } },
+    { "block": "manifesto", "dur": 6.0, "content": {
+      "META_L": "WHY NORTHWIND", "META_R": "WHAT SETS US APART", "LABEL": "Why teams choose us",
+      "ITEMS": [
+        { "bh": "AI-first.", "bd": "AI built into every service — not bolted on after." },
+        { "bh": "Data-driven.", "bd": "Decisions from insight, not guesswork." },
+        { "bh": "Global-ready.", "bd": "Multilingual, localized, built to expand." },
+        { "bh": "Honest &amp; fair.", "bd": "Real support, fair pricing, no fluff." } ] } },
+    { "block": "flow", "dur": 5.4, "content": {
+      "META_L": "HOW IT WORKS", "META_R": "OUR PROCESS", "LABEL": "Our proven process",
+      "STEPS": [
+        { "cls": "", "snum": "01", "sname": "Discover", "sdesc": "Understand your goals, audience &amp; market" },
+        { "cls": "", "snum": "02", "sname": "Strategy &amp; Build", "sdesc": "Craft the plan, then ship with speed" },
+        { "cls": "done", "snum": "03", "sname": "Optimize together", "sdesc": "Collaborate &amp; improve, continuously" } ] } },
+    { "block": "statement-list", "dur": 5.5, "content": {
+      "META_L": "THE RESULT", "META_R": "REAL OUTCOMES", "KICKER": "THE RESULT",
+      "HEAD": "Brands that grow<br><em>faster</em>.",
+      "LIST": [
+        { "lk": "Faster", "lv": "go-to-market." },
+        { "lk": "Multilingual content,", "lv": "lower cost." },
+        { "lk": "World-class,", "lv": "localized brand." } ],
+      "FOOT": "From launch to scale — powered by AI and real insight." } },
+    { "block": "cta", "dur": 5.0, "content": {
+      "META_L": "LET'S COLLABORATE", "META_R": "northwind.example", "WORD": "NORTHWIND",
+      "Q": "Let's build<br>something <em>great</em>.", "CSUB": "Tell us your goals — we'll craft the right solution.",
+      "BTN": "Get a free quote · northwind.example",
+      "DISC": "Northwind Digital · Digital Marketing &amp; AI Consulting · northwind.example" } }
+  ]
+}

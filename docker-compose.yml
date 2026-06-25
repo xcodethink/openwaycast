@@ -1,0 +1,16 @@
+# WayCast docker-compose —— 一键起(WIP:依赖 Dockerfile.tts,镜像尚未构建/验证,见 docs/tts.md 3.4)
+# 现状:本地直跑(node)即可,见 docs/install.md。Docker 路线等镜像固化后启用。
+services:
+  waycast:
+    build:
+      context: .
+      dockerfile: Dockerfile.tts
+    env_file:
+      - .env                       # BYO-key(全可选;本地模型走镜像内置)
+    volumes:
+      - ./engine/brands:/app/engine/brands   # 品牌包输入/产出
+      - ./output:/app/output                 # 成片输出
+    # 出片(指定已存在品牌):
+    #   docker compose run --rm -e BRAND=acme -e VO_LANG=en waycast node engine/build.mjs
+    # 全自动(URL→品牌包):
+    #   docker compose run --rm waycast node engine/content/make-brand.mjs https://example.com

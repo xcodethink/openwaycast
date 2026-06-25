@@ -1,0 +1,26 @@
+{
+  "_说明": "WJ DIGITAL 品牌介绍片旁白(英文,am_michael 暖声)。通俗版-面向普通用户。正好 8 段,与 8 镜一一对应(第7段=信念)。改这里的文字即可换配音。W J / A I 拆开写是为了 TTS 念准。",
+  "voice": "am_michael",
+  "lang": "en",
+  "vo": [
+    "This is W J Digital — an A I company with one simple belief. Not better software. A I that makes software feel unnecessary.",
+    "We build A I that turns what you want into finished work. No tool to learn — just tell it what you need.",
+    "Our work has three layers: the apps you use, the expert models behind them, and the A I that ties it all together. Each one gets you closer to the result, with less work.",
+    "Because people don't really want software. They want a result — a report written, a lesson prepared, a decision made.",
+    "So the flow is simple. You say what you want. A I works out the goal, picks the right tools, and hands back finished work.",
+    "We focus on six areas where good help has always been too expensive or too complicated: healthcare, finance, education, social, community, and everyday life.",
+    "And we build on three beliefs. A I should disappear into the result. It should work for ordinary people, not just experts. And in real fields, depth beats breadth.",
+    "Whatever you're trying to get done — just tell us. W J Digital. A I that takes you from what you want to what's done."
+  ],
+  "_说明_zh": "中文版旁白(CosyVoice 同嗓克隆念中文)。VO_LANG=zh 时用这组。画面仍为英文。",
+  "vo_zh": [
+    "这里是 WJ DIGITAL，一家信奉一个简单理念的 AI 公司：不是更好的软件，而是让软件显得多余的 AI。",
+    "我们打造能把你想要的，直接变成成品的 AI。不用学任何工具，只要告诉它你需要什么。",
+    "我们的工作分三层：你用的应用、背后的专家模型，以及把一切串起来的 AI。每一层都让你更接近结果，少费力气。",
+    "因为人们要的从来不是软件，而是一个结果：一份写好的报告、一堂备好的课、一个做好的决定。",
+    "所以流程很简单：你说出想要什么，AI 想清目标、挑好工具，再把做好的成品交还给你。",
+    "我们聚焦六个领域——在这些领域，优质的帮助一向太贵或太复杂：医疗、金融、教育、社交、社群，以及日常生活。",
+    "我们坚持三个信念：AI 应该隐于结果之中；它应该服务普通人，而不只是专家；在真实的领域里，深度胜过广度。",
+    "无论你想做成什么，告诉我们就好。WJ DIGITAL，让你从想法直抵完成。"
+  ]
+}

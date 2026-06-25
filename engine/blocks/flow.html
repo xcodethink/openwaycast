@@ -1,0 +1,83 @@
+<template id="{{ID}}-template">
+  <div data-composition-id="{{ID}}" data-width="1080" data-height="1920" data-start="0" data-duration="5.4">
+
+    <div class="bg"></div>
+    <div class="frame"></div>
+
+    <div class="pad">
+      <div class="meta"><span>{{META_L}}</span><span>{{META_R}}</span></div>
+
+      <div class="center">
+        <div class="label">{{LABEL}}</div>
+
+        <div class="flow">
+<!--ITEMS:STEPS--><div class="stage {{cls}}"><div class="snum">{{snum}}</div><div class="sbody"><div class="sname">{{sname}}</div><div class="sdesc">{{sdesc}}</div></div></div><div class="chev">▾</div>
+<!--/ITEMS--></div>
+      </div>
+    </div>
+
+    <div class="brand"><span>{{BRAND_MARK}}</span> {{BRAND_NAME}}</div>
+    <div class="seq">{{SEQ}}</div>
+
+    <style>
+      @font-face{font-family:'Noto Sans SC';font-weight:500;src:url('fonts/NotoSansSC-Medium.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:600;src:url('fonts/NotoSansSC-SemiBold.ttf') format('truetype');font-display:block}
+      @font-face{font-family:'Noto Sans SC';font-weight:700;src:url('fonts/NotoSansSC-Bold.ttf') format('truetype');font-display:block}
+      [data-composition-id="{{ID}}"]{--accent:{{ACCENT}};--accent2:{{ACCENT2}};position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;background:{{BG}};color:#f4f6f8;font-family:'Noto Sans SC',sans-serif}
+      [data-composition-id="{{ID}}"] .bg{position:absolute;inset:0;background:
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(0deg,rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(180deg,color-mix(in srgb,#ffffff 3%,{{BG}}) 0%,{{BG}} 100%);background-size:120px 120px,120px 120px,100% 100%}
+      [data-composition-id="{{ID}}"] .frame{position:absolute;inset:34px;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);pointer-events:none}
+      [data-composition-id="{{ID}}"] .pad{position:absolute;inset:0;padding:84px 78px 170px;display:flex;flex-direction:column}
+      [data-composition-id="{{ID}}"] .meta{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:29px;letter-spacing:.14em;color:#59626d;border-bottom:1px solid #242b33;padding-bottom:30px}
+      [data-composition-id="{{ID}}"] .center{margin:auto 0;display:flex;flex-direction:column}
+      [data-composition-id="{{ID}}"] .label{font-family:'Oswald',sans-serif;font-weight:600;font-size:42px;letter-spacing:.06em;color:var(--accent);text-transform:uppercase;opacity:0;margin-bottom:40px}
+      [data-composition-id="{{ID}}"] .flow{display:flex;flex-direction:column;align-items:stretch}
+      [data-composition-id="{{ID}}"] .stage{display:flex;align-items:center;gap:34px;background:#0c0f14;border:1px solid #242b33;border-left:5px solid var(--accent);padding:34px 44px;opacity:0}
+      [data-composition-id="{{ID}}"] .stage.done{border-left-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 6%,#0c0f14)}
+      [data-composition-id="{{ID}}"] .snum{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:40px;color:var(--accent);flex:0 0 auto;min-width:74px}
+      [data-composition-id="{{ID}}"] .stage.done .snum{color:var(--accent2)}
+      [data-composition-id="{{ID}}"] .sname{font-family:'Oswald',sans-serif;font-weight:700;font-size:56px;line-height:1;letter-spacing:.01em}
+      [data-composition-id="{{ID}}"] .stage.done .sname{color:var(--accent2)}
+      [data-composition-id="{{ID}}"] .sdesc{font-family:'Noto Sans SC';font-weight:500;font-size:30px;color:#9aa3ad;margin-top:8px}
+      [data-composition-id="{{ID}}"] .chev{font-family:'Oswald',sans-serif;font-size:40px;color:var(--accent);text-align:center;line-height:1;padding:8px 0;opacity:0}
+      [data-composition-id="{{ID}}"] .brand{position:absolute;bottom:64px;left:78px;font-family:'Oswald',sans-serif;font-weight:600;font-size:36px;color:#9aa3ad;letter-spacing:.08em}
+      [data-composition-id="{{ID}}"] .brand span{color:var(--accent)}
+      [data-composition-id="{{ID}}"] .seq{position:absolute;bottom:64px;right:78px;font-family:'JetBrains Mono',monospace;font-size:33px;color:#59626d;letter-spacing:.1em}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function(){
+        var ID="{{ID}}";
+        var root=document.querySelector('[data-composition-id="'+ID+'"]');
+        var $=function(s){return root.querySelector(s)},$$=function(s){return root.querySelectorAll(s)};
+        var bg=$('.bg'),center=$('.center');
+        var meta=$('.meta'),label=$('.label'),brand=$('.brand'),seq=$('.seq');
+        var stages=$$('.stage'),chevs=$$('.chev');
+        if(chevs.length) chevs[chevs.length-1].style.display='none';   // 末步后的 ▾ 隐藏
+        gsap.set([meta,brand,seq],{opacity:0});
+        window.__timelines=window.__timelines||{};
+        var D=parseFloat(root.getAttribute('data-duration'))||5.4;
+        var tl=gsap.timeline({paused:true});
+        tl.to(bg,{scale:1.07,duration:D,ease:"none",transformOrigin:"50% 45%"},0)
+          .to(center,{scale:1.02,y:-10,duration:D,ease:"sine.inOut",transformOrigin:"50% 40%"},0);
+        tl.to(meta,{opacity:1,duration:.5},0.1)
+          .to([brand,seq],{opacity:1,duration:.4},0.2)
+          .to(label,{opacity:1,y:0,duration:.5,ease:"power3.out"},0.3).from(label,{y:20},0.3);
+        var s0=0.8, sstep=Math.min(1.9,(D-1.4)/stages.length);
+        stages.forEach(function(st,i){
+          var t=s0+i*sstep;
+          tl.to(st,{opacity:1,y:0,duration:.5,ease:"power3.out"},t).from(st,{y:-22},t);
+          tl.fromTo(st,{scale:1},{scale:1.025,duration:.3,ease:"sine.out",transformOrigin:"0% 50%"},t+.4).to(st,{scale:1,duration:.45,ease:"sine.inOut"},t+.7);
+          if(chevs[i]) tl.to(chevs[i],{opacity:1,duration:.3,ease:"power2.out"},t+0.32);
+        });
+        var dt=s0+stages.length*sstep, dd=Math.max(0.9,(D-dt)/2);
+        tl.to(stages[stages.length-1],{scale:1.03,duration:dd,ease:"sine.inOut",yoyo:true,repeat:1,transformOrigin:"50% 50%"},dt);
+        tl.set({},{},5.4);
+        window.__timelines[ID]=tl;
+      })();
+    </script>
+  </div>
+</template>
